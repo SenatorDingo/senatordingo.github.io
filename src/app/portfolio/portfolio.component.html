@@ -1,12 +1,41 @@
 <body>
     <header>
         <nav>
-        <ul>
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/resume">Resume</a></li>
-            <li><a routerLink="/portfolio">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/resume">Resume</a></li>
+                <li><a routerLink="/portfolio">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
     </header>
+    <div class="card-container">
+        <app-card
+          *ngFor="let card of cards"
+          [imageLink]="card.imageLink"
+          [title]="card.title"
+          [languages]="card.languages"
+          [skills]="card.skills"
+          [description]="card.description"
+        ></app-card>
+    </div>
+
+
+    <footer>
+        <h2 id="linksTitle">My Links</h2>
+        <section class="links">
+          <a href="https://github.com/SenatorDingo" target="_blank" rel="noopener noreferrer">
+            <img class = "logos" src="assets/github-mark.png" alt="GitHub Logo">
+          </a>
+    
+          <a href="https://www.linkedin.com/in/ariyappillil" target="_blank" rel="noopener noreferrer">
+            <img class = "logos" src = "assets/LI-In-Bug.png" alt="LinkedIn Logo">
+          </a>
+        </section>
+    
+        <section id="actualFooter">
+        <p>&copy; 2023 Abhay. All rights reserved.</p>
+        </section>
+      </footer>
+      
 </body>
