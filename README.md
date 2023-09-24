@@ -1,6 +1,6 @@
 <h1>Repository for my personal website</h1>
 <p>Hosted on 
-  <a href="https://www.senatordingo.github.io">senatordingo.github.io</a>
+  <a href="senatordingo.github.io">senatordingo.github.io</a>
 </p>
 
 
