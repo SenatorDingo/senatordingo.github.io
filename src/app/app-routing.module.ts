@@ -4,11 +4,13 @@ import { IndexComponent } from './index/index.component';
 import { ResumeComponent } from './resume/resume.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { Routes, RouterModule } from '@angular/router';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'resume', component: ResumeComponent },
-  { path: 'portfolio', component: PortfolioComponent}
+  { path: 'portfolio', component: PortfolioComponent},
+  {path:  'contact', component: ContactComponent}
 ]
 
 @NgModule({

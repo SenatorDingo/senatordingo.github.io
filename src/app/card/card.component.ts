@@ -7,6 +7,12 @@ import { Component, Input} from '@angular/core';
 })
 export class CardComponent {
 
+  isFlipped = false;
+  flipCard() {
+    this.isFlipped = !this.isFlipped;
+  }
+
+
   @Input() imageLink: string | undefined;
   @Input() title: string = 'Project';
   @Input() languages: string = '';
