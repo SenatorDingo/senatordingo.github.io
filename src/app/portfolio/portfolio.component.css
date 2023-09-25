@@ -48,11 +48,32 @@ color: #fff;
 }
 
 .stats{
+    border: 5px solid silver;
     border-radius: 15px;
     margin: 0 auto;
-    max-width: fit-content;
+    max-width: 70%;
     background-color: #FFFFFF;
 }
+
+.githubStatsImage{
+    width:70%;
+    max-height: 20%;
+}
+
+@media (max-width: 900px) {
+
+    .githubStatsImage{
+        margin: 0 auto;
+        width:100%;
+    }
+    
+    .githubStatsImage img {
+        margin: 0 auto;
+        width: 100%; 
+        height: auto; 
+      }
+    
+  }
 
 .card-container{
     margin: 0 auto;
