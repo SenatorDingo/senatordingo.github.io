@@ -114,28 +114,3 @@ main {
     line-height: 1.5;
 }
 
-#linksTitle {
-    text-align: center;
-}
-
-.links {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.logos {
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 70px;
-    width: 70px;
-}
-
-#actualFooter {
-    background-color: #6a1b9a;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-}
