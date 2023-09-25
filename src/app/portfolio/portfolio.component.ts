@@ -16,13 +16,6 @@ export class PortfolioComponent {
       description: 'Worked as part of a team to successfully build an app that connects Tutors and Students.'
     },
     {
-      imageLink: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg',
-      title: 'AirStrike Game',
-      languages: 'Java',
-      skills: 'Object Oriented Programming',
-      description: 'Console Based Java game that focuses on ship to ship combat'
-    },
-    {
       imageLink: 'https://angular.io/assets/images/logos/angular/angular.svg',
       title: 'Personal Website',
       languages: 'Angular, HTML, CSS',
@@ -44,7 +37,14 @@ export class PortfolioComponent {
       description: 'A python script that randomly generates a set of cards and suggests the best hand'
     },
     {
-      imageLink: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg',
+      imageLink: 'assets/github-mark.png',
+      title: 'AirStrike Game',
+      languages: 'Java',
+      skills: 'Object Oriented Programming',
+      description: 'Console Based Java game that focuses on ship to ship combat'
+    },
+    {
+      imageLink: 'assets/github-mark.png',
       title: 'CourseCalcer',
       languages: 'Java',
       skills: 'OOP in Java, Structural Programming',
