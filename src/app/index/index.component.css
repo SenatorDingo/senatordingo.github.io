@@ -69,6 +69,7 @@ main {
 
 .about-me {
     background-color: #7e57c2;
+    border: 5px solid silver;
     border-radius: 15px;
     padding: 20px;
     margin-top: 20px;
@@ -88,13 +89,14 @@ main {
 }
 
 .about-me-image {
-    width: 30%;
-    border: 2px solid #fff;
+    width: 50%;
+    border: 3px solid orange;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 20px;
     @media (min-width: 901px){
         margin-right: 20px;
+        width: 30%;
     }
 }
 
