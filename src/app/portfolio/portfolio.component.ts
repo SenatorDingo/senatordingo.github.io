@@ -9,6 +9,13 @@ export class PortfolioComponent {
 
   cards = [
     {
+      imageLink: 'assets/icon.ico',
+      title: 'HMS-PMS',
+      languages: 'Kotlin, Thymeleaf',
+      skills: 'Software Architecture',
+      description: 'Patient Management Subsytem for a Hospital Management System'
+    },
+    {
       imageLink: 'assets/tutron-logo.png',
       title: 'Tutron App',
       languages: 'Java, XML',
@@ -42,13 +49,6 @@ export class PortfolioComponent {
       languages: 'Java',
       skills: 'Object Oriented Programming',
       description: 'Console Based Java game that focuses on ship to ship combat'
-    },
-    {
-      imageLink: 'assets/github-mark.png',
-      title: 'CourseCalcer',
-      languages: 'Java',
-      skills: 'OOP in Java, Structural Programming',
-      description: 'Java program for suggesting the best courses to take for software engineering students at the University of Ottawa. Currently under development.'
     }
   ]
 
