@@ -59,35 +59,42 @@
   <h2 class="section-heading" data-number="02.">Where I've Worked</h2>
   <div class="exp-container">
     <div class="exp-tabs" role="tablist">
-      <button
-        *ngFor="let exp of experiences; let i = index"
-        class="exp-tab"
-        [class.active]="activeExpIndex === i"
-        (click)="selectExperience(i)"
-        role="tab"
-      >
-        {{ exp.company }}
-      </button>
+      @for (exp of experiences; track exp; let i = $index) {
+        <button
+          class="exp-tab"
+          [class.active]="activeExpIndex === i"
+          (click)="selectExperience(i)"
+          role="tab"
+          >
+          {{ exp.company }}
+        </button>
+      }
     </div>
     <div class="exp-panel" role="tabpanel">
       <h3 class="exp-title">
         {{ experiences[activeExpIndex].role }}
         <span class="exp-company">
-          @
-          <a *ngIf="experiences[activeExpIndex].company === 'Ford Motor Company'"
-             href="https://www.ford.com" target="_blank" rel="noopener noreferrer">
-            {{ experiences[activeExpIndex].company }}
-          </a>
-          <span *ngIf="experiences[activeExpIndex].company !== 'Ford Motor Company'">
-            {{ experiences[activeExpIndex].company }}
-          </span>
+          &#64;
+          @if (experiences[activeExpIndex].company === 'Ford Motor Company') {
+            <a
+              href="https://www.ford.com" target="_blank" rel="noopener noreferrer">
+              {{ experiences[activeExpIndex].company }}
+            </a>
+          }
+          @if (experiences[activeExpIndex].company !== 'Ford Motor Company') {
+            <span>
+              {{ experiences[activeExpIndex].company }}
+            </span>
+          }
         </span>
       </h3>
       <p class="exp-period">{{ experiences[activeExpIndex].period }}</p>
       <ul class="exp-bullets">
-        <li *ngFor="let bullet of experiences[activeExpIndex].bullets">
-          {{ bullet }}
-        </li>
+        @for (bullet of experiences[activeExpIndex].bullets; track bullet) {
+          <li>
+            {{ bullet }}
+          </li>
+        }
       </ul>
     </div>
   </div>
@@ -97,14 +104,15 @@
 <section id="projects" class="section projects" #animateOnScroll>
   <h2 class="section-heading" data-number="03.">Things I've Built</h2>
   <div class="projects-grid">
-    <app-card
-      *ngFor="let project of projects"
-      [title]="project.title"
-      [description]="project.description"
-      [tech]="project.tech"
-      [githubLink]="project.github"
-      [externalLink]="project.external"
-    ></app-card>
+    @for (project of projects; track project) {
+      <app-card
+        [title]="project.title"
+        [description]="project.description"
+        [tech]="project.tech"
+        [githubLink]="project.github"
+        [externalLink]="project.external"
+      ></app-card>
+    }
   </div>
 </section>
 
@@ -112,16 +120,24 @@
 <section id="skills" class="section skills" #animateOnScroll>
   <h2 class="section-heading" data-number="04.">Skills & Tools</h2>
   <div class="skills-grid">
-    <div class="skill-category" *ngFor="let cat of skillCategories">
-      <h3 class="skill-category-name">{{ cat.name }}</h3>
-      <div class="skill-icons">
-        <div class="skill-icon-item" *ngFor="let skill of cat.skills" [title]="skill.name">
-          <i *ngIf="skill.icon" [class]="skill.icon"></i>
-          <img *ngIf="skill.img" [src]="skill.img" [alt]="skill.name" class="skill-img" />
-          <span class="skill-icon-label">{{ skill.name }}</span>
+    @for (cat of skillCategories; track cat) {
+      <div class="skill-category">
+        <h3 class="skill-category-name">{{ cat.name }}</h3>
+        <div class="skill-icons">
+          @for (skill of cat.skills; track skill) {
+            <div class="skill-icon-item" [title]="skill.name">
+              @if (skill.icon) {
+                <i [class]="skill.icon"></i>
+              }
+              @if (skill.img) {
+                <img [src]="skill.img" [alt]="skill.name" class="skill-img" />
+              }
+              <span class="skill-icon-label">{{ skill.name }}</span>
+            </div>
+          }
         </div>
       </div>
-    </div>
+    }
   </div>
 </section>
 
