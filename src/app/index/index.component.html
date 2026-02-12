@@ -1,35 +1,140 @@
-<body>
-    <header>
-      <nav>
-        <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/resume">Resume</a></li>
-          <li><a routerLink="/portfolio">Portfolio</a></li>
-          <li><a routerLink="/contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    
-    <main>
-      <section class="intro">
-        <h1>Welcome to My Personal Website</h1>
-      </section>
-  
-      <section class="about-me">
-        <div class="about-me-content">
-        
-            <div class="about-me-image">
-              <img src="assets/profile-image.jpeg" alt="My Image">
-            </div>
-            <div class="about-me-description">
-              <p>
-                Hi, I'm Abhay, a software developer, and this website is my digital playground. I am currently doing year 3 of a Software Engineering
-                course at the University of Ottawa. I am also an avid 4x game player so if you play Civ 6 or know anyone who does, be sure to let me know. 
-              </p>
-            </div>
-          
+<!-- ===== HERO ===== -->
+<section id="hero" class="hero">
+  <div class="hero-content" #animateOnScroll>
+    <p class="hero-greeting">Hi, my name is</p>
+    <h1 class="hero-name">Abhay Ariyappillil.</h1>
+    <h2 class="hero-tagline">I like building.</h2>
+    <p class="hero-description">
+      I'm a Software Engineering student at the
+      <a href="https://www.uottawa.ca" target="_blank" rel="noopener noreferrer">University of Ottawa</a>
+      specializing in build systems, CI/CD pipelines, and full-stack development.
+      Currently finishing up my 4th year and looking for new opportunities.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section about" #animateOnScroll>
+  <h2 class="section-heading" data-number="01.">About Me</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        Hello! I'm Abhay, a software engineer based in Ottawa, ON. I'm passionate about
+        4X strategy games and history. I have over 2000 hours played in Civilization VI.
+      </p>
+      <p>
+        I've had the privilege of working at
+        <a href="https://www.ford.com" target="_blank" rel="noopener noreferrer">Ford Motor Company</a>
+        across three co-op terms, where I developed CI/CD pipelines, optimized build systems,
+        and architected artifact management solutions.
+      </p>
+      <p>
+        I'm currently completing my BASc in Software Engineering at the University of Ottawa,
+        where I've maintained a <strong>9.54 CGPA</strong> and been on the Dean's Honor List every year.
+      </p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Co-op Terms</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">9.54</span>
+        <span class="stat-label">CGPA</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">10x</span>
+        <span class="stat-label">Dean's List</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="section experience" #animateOnScroll>
+  <h2 class="section-heading" data-number="02.">Where I've Worked</h2>
+  <div class="exp-container">
+    <div class="exp-tabs" role="tablist">
+      <button
+        *ngFor="let exp of experiences; let i = index"
+        class="exp-tab"
+        [class.active]="activeExpIndex === i"
+        (click)="selectExperience(i)"
+        role="tab"
+      >
+        {{ exp.company }}
+      </button>
+    </div>
+    <div class="exp-panel" role="tabpanel">
+      <h3 class="exp-title">
+        {{ experiences[activeExpIndex].role }}
+        <span class="exp-company">
+          @
+          <a *ngIf="experiences[activeExpIndex].company === 'Ford Motor Company'"
+             href="https://www.ford.com" target="_blank" rel="noopener noreferrer">
+            {{ experiences[activeExpIndex].company }}
+          </a>
+          <span *ngIf="experiences[activeExpIndex].company !== 'Ford Motor Company'">
+            {{ experiences[activeExpIndex].company }}
+          </span>
+        </span>
+      </h3>
+      <p class="exp-period">{{ experiences[activeExpIndex].period }}</p>
+      <ul class="exp-bullets">
+        <li *ngFor="let bullet of experiences[activeExpIndex].bullets">
+          {{ bullet }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="section projects" #animateOnScroll>
+  <h2 class="section-heading" data-number="03.">Things I've Built</h2>
+  <div class="projects-grid">
+    <app-card
+      *ngFor="let project of projects"
+      [title]="project.title"
+      [description]="project.description"
+      [tech]="project.tech"
+      [githubLink]="project.github"
+      [externalLink]="project.external"
+    ></app-card>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section skills" #animateOnScroll>
+  <h2 class="section-heading" data-number="04.">Skills & Tools</h2>
+  <div class="skills-grid">
+    <div class="skill-category" *ngFor="let cat of skillCategories">
+      <h3 class="skill-category-name">{{ cat.name }}</h3>
+      <div class="skill-icons">
+        <div class="skill-icon-item" *ngFor="let skill of cat.skills" [title]="skill.name">
+          <i *ngIf="skill.icon" [class]="skill.icon"></i>
+          <img *ngIf="skill.img" [src]="skill.img" [alt]="skill.name" class="skill-img" />
+          <span class="skill-icon-label">{{ skill.name }}</span>
         </div>
-      </section>    
-    </main>
-    <app-footer></app-footer>
-  </body>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section contact" #animateOnScroll>
+  <p class="contact-overline">05. What's Next?</p>
+  <h2 class="contact-title">Get In Touch</h2>
+  <p class="contact-text">
+    I'm currently looking for new opportunities after graduation in April 2026.
+    Whether you have a question, just want to say hi, or talk about CIV VI, my inbox is always open!
+  </p>
+  <a class="btn-primary" href="https://linkedin.com/in/ariyappillil" target="_blank" rel="noopener noreferrer">Say Hello</a>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<app-footer></app-footer>

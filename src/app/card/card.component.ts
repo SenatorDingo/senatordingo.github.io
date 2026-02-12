@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,17 +6,9 @@ import { Component, Input} from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-
-  isFlipped = false;
-  flipCard() {
-    this.isFlipped = !this.isFlipped;
-  }
-
-
-  @Input() imageLink: string | undefined;
   @Input() title: string = 'Project';
-  @Input() languages: string = '';
-  @Input() skills: string = '';
-  @Input() description: string = 'Description';
-
+  @Input() description: string = '';
+  @Input() tech: string[] = [];
+  @Input() githubLink: string = '';
+  @Input() externalLink: string = '';
 }

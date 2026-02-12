@@ -1,0 +1,206 @@
+%-------------------------
+% Resume in LaTeX
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\color[rgb]{0.090,0.129,0.529}
+}{}{0em}{}[{\color[rgb]{0.314,0.365,0.882}\titlerule} \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape \textcolor[rgb]{0.090,0.129,0.529}{Abhay Ariyappillil}} \\ \vspace{1pt}
+    \small Ottawa, ON $|$
+    \href{https://senatordingo.github.io}{\underline{Website}} $|$
+    \href{https://linkedin.com/in/ariyappillil}{\underline{LinkedIn}} $|$
+    \href{https://github.com/senatordingo}{\underline{GitHub}}
+\end{center}
+
+
+%-----------SUMMARY-----------
+\section{Summary}
+  \resumeSubHeadingListStart
+    \resumeItem{4th year Software Engineering student at the University of Ottawa}
+    \resumeItem{Skilled in modern programming with Angular, Spring Boot, Bash, Python, Java, Elixir and Kotlin}
+    \resumeItem{Experience with CI/CD pipelines, embedded systems, containerization, and build system optimization}
+  \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Ottawa}{Ottawa, ON}
+      {BASc Software Engineering}{Sep 2022 -- Apr 2026}
+      \resumeItemListStart
+        \resumeItem{Dean's Honor List -- 2022, 2023, 2024, 2025}
+        \resumeItem{Current CGPA: 9.54}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Embedded Build and Pipeline Developer Co-op}{May 2025 -- Aug 2025}
+      {Ford Motor Company}{}
+      \resumeItemListStart
+        \resumeItem{Designed and implemented an artifact management framework for multiple Petabytes of data}
+        \resumeItem{Spearheaded containerization and build environment standardization for a component build system}
+        \resumeItem{Collaborated with cross-functional hardware, firmware and validation teams to ensure seamless integration}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Build and Integration Engineer Co-op}{Sep 2024 -- Dec 2024}
+      {Ford Motor Company}{}
+      \resumeItemListStart
+        \resumeItem{Developed and maintained parts of the CI pipeline across Jenkins and Github Actions}
+        \resumeItem{Migrated storage systems for a company-wide component CI Pipeline}
+        \resumeItem{Optimized build scripts to improve build times and readability}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Build Systems Software Engineer Co-op}{Jan 2024 -- Apr 2024}
+      {Ford Motor Company}{}
+      \resumeItemListStart
+        \resumeItem{Contributed to CI pipeline by maintaining Jenkins jobs and creating new builds}
+        \resumeItem{Completed build releases and created documentation across Github and Jenkins}
+        \resumeItem{Optimized codebase to achieve faster build times in the packaging layer}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Member, Engineering Faculty Council}{Apr 2023 -- Apr 2024}
+      {University of Ottawa}{}
+      \resumeItemListStart
+        \resumeItem{Elected member of the governing council for the engineering department}
+        \resumeItem{Engaged in discussions on critical issues, including the development and enhancement of courses}
+        \resumeItem{Endorsed and voted on innovative initiatives aimed at enhancing faculty development and resources}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/SEG2105-uottawa/ProjectGroupCapn}{Tutron App}} $|$ \emph{Java, Firebase RTDB, CircleCI, Agile}}{}
+          \resumeItemListStart
+            \resumeItem{An Android app to connect students and tutors. Built in Java using Firebase RTDB}
+            \resumeItem{Utilized unit tests and CircleCI to maintain cohesion among the agile team}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/SenatorDingo/HMS-PMS-Server-Client}{Hospital Management System}} $|$ \emph{Spring Boot, Kotlin, Thymeleaf, Docker}}{}
+          \resumeItemListStart
+            \resumeItem{A Spring Boot-Kotlin Server and a Thymeleaf Client for Patient Management}
+            \resumeItem{Uses a Docker container to ship with configurations}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: C, C++, Bash, Java, Kotlin, Elixir, Python } \\
+     \textbf{Web Development}{: Angular, React, Spring Boot, Thymeleaf, REST APIs, JavaScript, CSS, HTML} \\
+     \textbf{Database Management}{: Firebase, Firestore, MySQL, SQLite, MongoDB} \\
+     \textbf{DevOps}{: Github Actions, CircleCI, Jenkins, Docker, Kubernetes} \\
+     \textbf{Embedded Development}{: FreeRTOS, Bitbake, Yocto Project} \\
+     \textbf{Repository Management}{: Nexus, Artifactory, GCP} \\
+     \textbf{Operating Systems}{: Linux, Windows, MacOS} \\
+     \textbf{Developer Tools}{: Confluence, Jira, Gradle, Git, Jupyter Notebook} \\
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}

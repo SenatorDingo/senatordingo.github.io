@@ -1,64 +1,82 @@
-.card {
-    width: 300px;
-    height: 400px;
-    position: relative;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-    cursor: pointer;
-    border: 5px double silver;
-    border-radius: 10%;
-    
-  }
+.project-card {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  border: 1px solid var(--bg-tertiary);
+  height: 100%;
+  cursor: default;
+}
 
-  @media(max-width:901px){
-      .card:hover {
-        transform: rotateY(180deg);
-      }
-  }
-  
-  @media(min-width:901px){
-    .card:hover {
-      transform: rotateY(180deg);
-    }
-  }
-  
-  .front,.back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    
-  }
-  
-  .front {
-    border: 1px solid;
-    border-radius: 10%;
-    background-color: #FF8C00;
-    color: #FFFFFF;
-  }
-  
-  .back {
-    border: 1px solid;
-    border-radius: 10%;
-    background-color: #7e57c2;
-    color: #FFFFE0;
-    transform: rotateY(180deg);
-  }
-  
-  .card img {
-  
-    border: 5px solid black;
-    max-width:50%;
-    max-height: 20%;
-  }
-  p{
-    margin-left: 5%;
-    margin-right: 5%;
-  }
+.project-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 30px -15px var(--card-hover-shadow);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.folder-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--accent);
+}
+
+.card-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.card-links a {
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.card-links a:hover {
+  color: var(--accent);
+}
+
+.card-links svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  transition: var(--transition);
+}
+
+.project-card:hover .card-title {
+  color: var(--accent);
+}
+
+.card-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.card-tech li {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
