@@ -55,6 +55,13 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
   projects = [
     {
+      title: 'Alien Pet Health AI Pipeline',
+      description: 'Built an end to end AI workflow across data preparation, classical machine learning, and deep learning for binary prediction, with tuning, regularization, and F1/ROC-AUC evaluation.',
+      tech: ['Pandas', 'Scikit-learn', 'TensorFlow', 'Keras'],
+      github: 'https://github.com/SenatorDingo/CSI4106_AI_Model_Alien_Pet',
+      external: ''
+    },
+    {
       title: 'Hospital Management System',
       description: 'A Spring Boot-Kotlin Server and a Thymeleaf Client for Patient Management. Containerized with Docker for easy deployment.',
       tech: ['Kotlin', 'Spring Boot', 'Thymeleaf', 'Docker'],
@@ -74,13 +81,6 @@ export class IndexComponent implements OnInit, AfterViewInit {
       tech: ['Angular', 'TypeScript', 'CSS3', 'HTML5'],
       github: 'https://github.com/SenatorDingo/senatordingo.github.io',
       external: 'https://senatordingo.github.io'
-    },
-    {
-      title: 'TaskAssist App',
-      description: 'An Android planner application built with Kotlin featuring task management, scheduling, and an intuitive material design interface.',
-      tech: ['Kotlin', 'Android', 'XML', 'SQLite'],
-      github: '',
-      external: ''
     },
     {
       title: 'Holdem Hand Analyzer',
@@ -143,7 +143,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
       ]
     },
     {
-      name: 'Embedded & Systems',
+      name: 'Embedded Systems',
       skills: [
         { name: 'FreeRTOS', icon: '', img: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Logo_freeRTOS.png' },
         { name: 'Yocto Project', icon: '', img: 'https://upload.wikimedia.org/wikipedia/commons/0/00/Yocto_Project_logo.svg' },
